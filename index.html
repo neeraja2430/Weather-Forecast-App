@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Forecast App</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f4f4f4;
+            text-align:center;
+            margin-top:100px;
+        }
+
+        .container{
+            background:white;
+            width:400px;
+            margin:auto;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+        }
+
+        input{
+            width:80%;
+            padding:10px;
+            margin:10px;
+        }
+
+        button{
+            padding:10px 20px;
+            background:#4CAF50;
+            color:white;
+            border:none;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#45a049;
+        }
+
+        #result{
+            margin-top:20px;
+            font-size:18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Weather Forecast App</h1>
+
+    <input type="text" id="city" placeholder="Enter City Name">
+
+    <button onclick="getWeather()">Get Weather</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+function getWeather() {
+
+    let city = document.getElementById("city").value;
+
+    if(city === ""){
+        alert("Please enter a city name");
+        return;
+    }
+
+    document.getElementById("result").innerHTML =
+    "<h3>Weather Report</h3>" +
+    "<p>City: " + city + "</p>" +
+    "<p>Temperature: 30°C</p>" +
+    "<p>Condition: Sunny</p>" +
+    "<p>Humidity: 65%</p>" +
+    "<p>Wind Speed: 12 km/h</p>";
+}
+</script>
+
+</body>
+</html>
